@@ -1,0 +1,11 @@
+{
+	"name": "v2ray2clash",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-09-06",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"observability": {
+		"enabled": true,
+	},
+}

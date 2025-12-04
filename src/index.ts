@@ -31,20 +31,10 @@ export default {
 			}
 
 			if (!mode || !path) {
-				return new Response(
-					'Usage:\n' +
-					'Format: https://worker.domain/{mode}/{v2ray-subscription-url}\n\n' +
-					'Modes:\n' +
-					'  whitelist: Only proxy blocked domains\n' +
-					'  blacklist: Proxy everything except CN domains\n\n' +
-					'Examples:\n' +
-					'  https://worker.domain/blacklist/https://example.com/sub?token=123\n' +
-					'  https://worker.domain/whitelist/https://example.com/sub?token=123',
-					{
-						status: 400,
-						headers: { 'Content-Type': 'text/plain; charset=utf-8' },
-					}
-				);
+				return new Response('Bad Request', {
+					status: 400,
+					headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+				});
 			}
 
 			// Construct the full V2Ray subscription URL
